@@ -218,10 +218,10 @@ begin
   response := '';
   IdHTTP1 := TIdHTTP.Create(nil);
   IdHTTP1.Request.ContentType := 'application/json';
-  IdHTTP1.IOHandler := TIdSSLIOHandlerSocket.Create(IdHTTP1);
+  IdHTTP1.IOHandler := TIdSSLIOHandlerSocketOpenSSL.Create(IdHTTP1);
   if IdLogEvent <> nil then
     IdHTTP1.Intercept := IdLogEvent;
-  with TIdSSLIOHandlerSocket(IdHTTP1.IOHandler) do begin
+  with TIdSSLIOHandlerSocketOpenSSL(IdHTTP1.IOHandler) do begin
     SSLOptions.Method := sslvTLSv1;
     SSLOptions.Mode := sslmUnassigned;
     SSLOptions.VerifyMode := [];
@@ -271,10 +271,10 @@ Begin
   IdHTTP1 := TIdHTTP.Create(nil);
   IdHTTP1.Request.ContentType := 'text/plain';
   IdHTTP1.Request.Accept := 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
-  IdHTTP1.IOHandler := TIdSSLIOHandlerSocket.Create(IdHTTP1);
+  IdHTTP1.IOHandler := TIdSSLIOHandlerSocketOpenSSL.Create(IdHTTP1);
   if IdLogEvent <> nil then
     IdHTTP1.Intercept := IdLogEvent;
-  with TIdSSLIOHandlerSocket(IdHTTP1.IOHandler) do begin
+  with TIdSSLIOHandlerSocketOpenSSL(IdHTTP1.IOHandler) do begin
     SSLOptions.Method := sslvTLSv1;
     SSLOptions.Mode := sslmUnassigned;
     SSLOptions.VerifyMode := [];
@@ -320,10 +320,10 @@ begin
   IdHTTP1 := TIdHTTP.Create(nil);
   IdHTTP1.Request.ContentType := 'text/plain; charset=dropbox-cors-hack';
   IdHTTP1.Request.Accept := 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
-  IdHTTP1.IOHandler := TIdSSLIOHandlerSocket.Create(IdHTTP1);
+  IdHTTP1.IOHandler := TIdSSLIOHandlerSocketOpenSSL.Create(IdHTTP1);
   if IdLogEvent <> nil then
     IdHTTP1.Intercept := IdLogEvent;
-  with TIdSSLIOHandlerSocket(IdHTTP1.IOHandler) do begin
+  with TIdSSLIOHandlerSocketOpenSSL(IdHTTP1.IOHandler) do begin
     SSLOptions.Method := sslvTLSv1;
     SSLOptions.Mode := sslmUnassigned;
     SSLOptions.VerifyMode := [];
